@@ -63,45 +63,60 @@ npm run dev
 
 ### 🔐 Authentication
 
-| Method | Endpoint        | Description             |
-|--------|-----------------|-------------------------|
-| POST   | `/auth/register` | Register user           |
-| POST   | `/auth/login`    | Login & receive token   |
+| Method | Endpoint         | Description           |
+| ------ | ---------------- | --------------------- |
+| POST   | `/auth/register` | Register user         |
+| POST   | `/auth/login`    | Login & receive token |
 
 ---
 
 ### 👤 Users (Admin only)
 
-| Method | Endpoint           | Description                |
-|--------|--------------------|----------------------------|
-| GET    | `/users`           | Get all users              |
-| PATCH  | `/users/block/:id` | Block/unblock user         |
+| Method | Endpoint           | Description        |
+| ------ | ------------------ | ------------------ |
+| GET    | `/users`           | Get all users      |
+| PATCH  | `/users/block/:id` | Block/unblock user |
 
 ---
 
 ### 🚗 Drivers
 
-| Method | Endpoint                    | Description                     |
-|--------|-----------------------------|---------------------------------|
-| PATCH  | `/drivers/approve/:id`      | Approve a driver (Admin only)  |
-| PATCH  | `/drivers/online-status`    | Update driver online status    |
-| GET    | `/drivers/earnings/:id`     | Get total completed ride count |
+| Method | Endpoint                 | Description                    |
+| ------ | ------------------------ | ------------------------------ |
+| PATCH  | `/drivers/approve/:id`   | Approve a driver (Admin only)  |
+| PATCH  | `/drivers/online-status` | Update driver online status    |
+| GET    | `/drivers/earnings/:id`  | Get total completed ride count |
 
 ---
 
 ### 🚕 Rides
 
-| Method | Endpoint               | Description                      |
-|--------|------------------------|----------------------------------|
-| POST   | `/rides/request`       | Rider requests a ride            |
-| DELETE | `/rides/cancel/:id`    | Cancel a ride (by rider)         |
-| PATCH  | `/rides/accept/:id`    | Driver accepts a ride            |
-| PATCH  | `/rides/reject/:id`    | Driver rejects a ride            |
-| PATCH  | `/rides/status/:id`    | Driver updates ride status       |
-| GET    | `/rides/history`       | Get ride history (rider/driver)  |
-| GET    | `/rides`               | Get all rides (Admin only)       |
+| Method | Endpoint            | Description                     |
+| ------ | ------------------- | ------------------------------- |
+| POST   | `/rides/request`    | Rider requests a ride           |
+| DELETE | `/rides/cancel/:id` | Cancel a ride (by rider)        |
+| PATCH  | `/rides/accept/:id` | Driver accepts a ride           |
+| PATCH  | `/rides/reject/:id` | Driver rejects a ride           |
+| PATCH  | `/rides/status/:id` | Driver updates ride status      |
+| GET    | `/rides/history`    | Get ride history (rider/driver) |
+| GET    | `/rides`            | Get all rides (Admin only)      |
 
 ---
+
+## 📬 API Collection (Postman)
+
+You can use the following Postman collection to test all API endpoints:
+
+📁 [`ride-booking-api.postman_collection.json`](./collections/ride-booking-api.postman_collection.json)
+
+### How to Use:
+
+1. Open Postman.
+2. Click **Import**.
+3. Select the `ride-booking-api.postman_collection.json` file.
+4. Run the requests inside the collection.
+
+> 🔐 Don't forget to set your environment variables like `BASE_URL`, `Authorization Token`, etc.
 
 ## 🧠 Technologies Used
 
@@ -114,8 +129,6 @@ npm run dev
 - bcrypt (Password Hashing)
 
 ---
-
-
 
 ## 📞 Contact
 

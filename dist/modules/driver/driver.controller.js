@@ -53,7 +53,7 @@ const driverCompletedRides = (0, catchAsync_1.catchAsync)((req, res, next) => __
     (0, sendResponse_1.sendResponse)(res, {
         statusCode: http_status_codes_1.default.CREATED,
         success: true,
-        message: "Drivers Total Earnings",
+        message: "Drivers Completed Rides",
         data: driverOnlineStatus,
     });
 }));

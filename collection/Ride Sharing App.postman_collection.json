@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "938b873d-55f0-4157-8ddf-42a927afac34",
+		"name": "Ride Sharing App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45951227",
+		"_collection_link": "https://mirazrahman.postman.co/workspace/Miraz-Rahman's-Workspace~cdb292d5-eb98-469f-82a3-1fd0e3d50b0e/collection/45951227-938b873d-55f0-4157-8ddf-42a927afac34?action=share&source=collection_link&creator=45951227"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\": \"mirazzzz@gmail.com\",\r\n    \"password\": \"Miraz123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Access Token via Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/auth/refresh-token",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/auth/logout",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset / Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNTY1ZDY0OWFjYTA0MWEyN2M1YjQiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk2NDg3OCwiZXhwIjoxNzU0MDUxMjc4fQ.g_eKeojydb57TRl5Qkg1vd3BK84kuhlvtiEoKQzOZxU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"123456789\",\r\n    \"newPassword\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/auth/reset-password",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"RIDER\",\r\n    \"email\": \"mirazzzz@gmail.com\",\r\n    \"password\": \"Miraz123!\",\r\n    \"role\": \"DRIVER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/user/register",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiYWZjNzY0MjM4YTNjMDA1ZDU2NzgiLCJlbWFpbCI6Im1pcmF6ekBnbWFpbC5jb20iLCJyb2xlIjoiRFJJVkVSIiwiaWF0IjoxNzUzOTg5MjI1LCJleHAiOjE3NTQwNzU2MjV9._Q18VMXE_VCtxKXShdO3rlQgfS-KJeG8UX-4IgIsZk8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"role\": \"DRIVER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/user/688bafc764238a3c005d5678",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"688bafc764238a3c005d5678"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ride",
+			"item": [
+				{
+					"name": "Request Ride by Rider",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjZDU0OWYwMjk4Y2QxMjQwOGM4OWUiLCJlbWFpbCI6Im1pcmF6enpAZ21haWwuY29tIiwicm9sZSI6IlJJREVSIiwiaWF0IjoxNzU0MDYwMTIxLCJleHAiOjE3NTQxNDY1MjF9.jI5wU6npa9zRuPfBkK5gN_QbZ1oPtVHvgY1Yjx8ACNM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pickupLocation\": {\r\n        \"coordinates\": [\r\n            40.8103,\r\n            40.4125\r\n        ]\r\n    },\r\n    \"destinationLocation\": {\r\n        \"coordinates\": [\r\n            24.7806,\r\n            60.4074\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/rides/request",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Ride by Rider",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNmI3NGZiMWZiM2Y3OTJhMDUzOGYiLCJlbWFpbCI6Im1pcmF6QGdtYWlsLmNvbSIsInJvbGUiOiJSSURFUiIsImlhdCI6MTc1NDAzNDQzOSwiZXhwIjoxNzU0MTIwODM5fQ.0l8OLwEWfbhSUXBpxsKV3Qm1e_KStyYkjBSf1qMhYLw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/rides/cancel/688c7d654cb5dd9615c6da39",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								"cancel",
+								"688c7d654cb5dd9615c6da39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ride History by (Rider & a Driver)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNmI3NGZiMWZiM2Y3OTJhMDUzOGYiLCJlbWFpbCI6Im1pcmF6QGdtYWlsLmNvbSIsInJvbGUiOiJSSURFUiIsImlhdCI6MTc1NDAzNDQzOSwiZXhwIjoxNzU0MTIwODM5fQ.0l8OLwEWfbhSUXBpxsKV3Qm1e_KStyYkjBSf1qMhYLw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/rides/history",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Rides by Driver",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjZDVhOGYwMjk4Y2QxMjQwOGM4YTEiLCJlbWFpbCI6Im1pcmF6enp6QGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTQwNjAyMTgsImV4cCI6MTc1NDE0NjYxOH0.A1DPmpqY9iEqC8upB0V8VxLjvVLxaDusnDAwd5qUxOk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/rides/accept/688cab510320ef9c6e45d437",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								"accept",
+								"688cab510320ef9c6e45d437"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Rides by Driver",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiYWZjNzY0MjM4YTNjMDA1ZDU2NzgiLCJlbWFpbCI6Im1pcmF6ekBnbWFpbC5jb20iLCJyb2xlIjoiRFJJVkVSIiwiaWF0IjoxNzU0MDQyNzc0LCJleHAiOjE3NTQxMjkxNzR9.EcbIA6TTuAnI3z3uGenbIDnX8qN1ohMhAgDMNP-gHuQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6000/api/v1/rides/reject/688c8956d221d7f97214d585",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								"reject",
+								"688c8956d221d7f97214d585"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Ride Status by Driver",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYWE5ZTAzMjBlZjljNmU0NWQ0MWYiLCJlbWFpbCI6Im1pcmF6QGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTQwNDkzNzMsImV4cCI6MTc1NDEzNTc3M30._Rm3SRIgsjJmWJxO7uAJEpLhewv0H7jpIBn0UZhjMhs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"COMPLETED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/rides/status/688cab510320ef9c6e45d437",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								"status",
+								"688cab510320ef9c6e45d437"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Only",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNTY1ZDY0OWFjYTA0MWEyN2M1YjQiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk4NTI1NiwiZXhwIjoxNzU0MDcxNjU2fQ.Lj9WQahBezymPV72prTtM9_2SjB3OeZti892HVt59uE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/user/all-users",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blocked a User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNTY1ZDY0OWFjYTA0MWEyN2M1YjQiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk5NDUzNCwiZXhwIjoxNzU0MDgwOTM0fQ.9Wb5WjKTF7o2SjGfc18iHGbXw1EzCZDpG6nPt8lZpg8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/user/block/688b6b74fb1fb3f792a053",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"block",
+								"688b6b74fb1fb3f792a053"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unblocked a User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNTY1ZDY0OWFjYTA0MWEyN2M1YjQiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk5NDUzNCwiZXhwIjoxNzU0MDgwOTM0fQ.9Wb5WjKTF7o2SjGfc18iHGbXw1EzCZDpG6nPt8lZpg8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/user/unblock/688b6b74fb1fb3f792a0538f",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"unblock",
+								"688b6b74fb1fb3f792a0538f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiNTY1ZDY0OWFjYTA0MWEyN2M1YjQiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Mzk4NTI1NiwiZXhwIjoxNzU0MDcxNjU2fQ.Lj9WQahBezymPV72prTtM9_2SjB3OeZti892HVt59uE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6000/api/v1/user/688b6b74fb1fb3f792a0538f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"688b6b74fb1fb3f792a0538f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Rides by Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhiYWZjNzY0MjM4YTNjMDA1ZDU2NzgiLCJlbWFpbCI6Im1pcmF6ekBnbWFpbC5jb20iLCJyb2xlIjoiRFJJVkVSIiwiaWF0IjoxNzU0MDQyNzc0LCJleHAiOjE3NTQxMjkxNzR9.EcbIA6TTuAnI3z3uGenbIDnX8qN1ohMhAgDMNP-gHuQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/rides/",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rides",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve a Driver by Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYWE4NTAzMjBlZjljNmU0NWQ0MWMiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDA1MjM3MCwiZXhwIjoxNzU0MTM4NzcwfQ.CL-ddyScyUHgUO-AatHfuA8XFDfTIPQOpAAVa_1vxZg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6000/api/v1/drivers/approve/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"api",
+								"v1",
+								"drivers",
+								"approve",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suspend a Driver by Admin Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYWE4NTAzMjBlZjljNmU0NWQ0MWMiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDA1MjM3MCwiZXhwIjoxNzU0MTM4NzcwfQ.CL-ddyScyUHgUO-AatHfuA8XFDfTIPQOpAAVa_1vxZg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6000/api/v1/drivers/suspend/688caa9e0320ef9c6e45d41f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"api",
+								"v1",
+								"drivers",
+								"suspend",
+								"688caa9e0320ef9c6e45d41f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Driver",
+			"item": [
+				{
+					"name": "Update Online by Driver",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYTI1NGQyMjdlNmMxMzM5MGUwM2UiLCJlbWFpbCI6Im1pcmF6enpAZ21haWwuY29tIiwicm9sZSI6IkRSSVZFUiIsImlhdCI6MTc1NDA0ODMwNiwiZXhwIjoxNzU0MTM0NzA2fQ.j6xEjSH5bL87zC-6mjszdCMMCW_D0kz1jdVOqx_O2jI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/drivers/online",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drivers",
+								"online"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Offline by Driver",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYTI1NGQyMjdlNmMxMzM5MGUwM2UiLCJlbWFpbCI6Im1pcmF6enpAZ21haWwuY29tIiwicm9sZSI6IkRSSVZFUiIsImlhdCI6MTc1NDA0ODMwNiwiZXhwIjoxNzU0MTM0NzA2fQ.j6xEjSH5bL87zC-6mjszdCMMCW_D0kz1jdVOqx_O2jI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/drivers/offline",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drivers",
+								"offline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Driver Total Earnings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYWE5ZTAzMjBlZjljNmU0NWQ0MWYiLCJlbWFpbCI6Im1pcmF6QGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTQwNDkzNzMsImV4cCI6MTc1NDEzNTc3M30._Rm3SRIgsjJmWJxO7uAJEpLhewv0H7jpIBn0UZhjMhs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/drivers/earnings",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drivers",
+								"earnings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Drivers Completed Rides",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjYWE5ZTAzMjBlZjljNmU0NWQ0MWYiLCJlbWFpbCI6Im1pcmF6QGdtYWlsLmNvbSIsInJvbGUiOiJEUklWRVIiLCJpYXQiOjE3NTQwNDkzNzMsImV4cCI6MTc1NDEzNTc3M30._Rm3SRIgsjJmWJxO7uAJEpLhewv0H7jpIBn0UZhjMhs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://level-two-assignment-five.vercel.app/api/v1/drivers/my-rides",
+							"protocol": "https",
+							"host": [
+								"level-two-assignment-five",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drivers",
+								"my-rides"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
