@@ -33,7 +33,6 @@ passport.use(
 
 
         } catch (error) {
-            console.log(error);
             done(error)
         }
     })
@@ -48,7 +47,6 @@ passport.deserializeUser(async (id: string, done: any) => {
         const user = await User.findById(id);
         done(null, user)
     } catch (error) {
-        console.log(error);
         done(error)
     }
 })

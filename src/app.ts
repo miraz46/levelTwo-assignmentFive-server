@@ -21,6 +21,7 @@ app.use(expressSession({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
+app.set("trust proxy", 1)
 app.use(cors())
 app.use(cookieParser())
 
@@ -28,7 +29,7 @@ app.use("/api/v1", router)
 
 app.get("/", (req: Request, res: Response) => {
     res.status(200).json({
-        message: "Welcome to Tour Management System Backend"
+        message: "Welcome to Ride Booking System Backend"
     })
 })
 
