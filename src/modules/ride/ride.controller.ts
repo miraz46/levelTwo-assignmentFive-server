@@ -14,7 +14,7 @@ const requestRides = catchAsync(async (req: Request, res: Response, next: NextFu
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
         success: true,
-        message: "User Created Successfully",
+        message: "Ride Requested Done",
         data: user
     })
 })
