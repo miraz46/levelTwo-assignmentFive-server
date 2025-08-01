@@ -9,7 +9,6 @@ import { JwtPayload } from "jsonwebtoken";
 
 const requestRides = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const decodeToken = req.user as JwtPayload
-    console.log(req.body, decodeToken);
     const user = await RidesService.requestRides(req.body, decodeToken.userId);
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
