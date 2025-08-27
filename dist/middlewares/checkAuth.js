@@ -22,7 +22,7 @@ const user_interface_1 = require("../modules/user/user.interface");
 const checkAuth = (...authRoles) => (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const accessToken = req.headers.authorization;
+        const accessToken = req.headers.authorization || req.cookies.accessToken;
         if (!accessToken) {
             throw new AppError_1.default(403, "No Token Received");
         }

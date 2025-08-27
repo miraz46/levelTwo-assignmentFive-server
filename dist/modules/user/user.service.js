@@ -72,6 +72,12 @@ const updateUser = (userId, payload, verifiedToken) => __awaiter(void 0, void 0,
     const newUpdatedUser = yield user_model_1.User.findByIdAndUpdate(userId, payload, { new: true, runValidators: true });
     return newUpdatedUser;
 });
+const getMe = (userId) => __awaiter(void 0, void 0, void 0, function* () {
+    const user = yield user_model_1.User.findById(userId).select("-password");
+    return {
+        data: user
+    };
+});
 const getSingleUser = (userId) => __awaiter(void 0, void 0, void 0, function* () {
     const users = yield user_model_1.User.findById(userId);
     return {
@@ -122,6 +128,7 @@ exports.UserServices = {
     createUser,
     updateUser,
     getAllUsers,
+    getMe,
     getSingleUser,
     blockedUser,
     unblockedUser

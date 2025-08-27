@@ -15,7 +15,7 @@ router.get("/my-rides", checkAuth(Role.DRIVER), DriverController.driverCompleted
 
 // //Admin only
 router.patch("/approve/:id", checkAuth(Role.ADMIN), DriverController.approveDriver)
-router.patch("/suspend/:id",checkAuth(Role.ADMIN), DriverController.suspendDriver)
+router.patch("/suspend/:id", checkAuth(Role.ADMIN), DriverController.suspendDriver)
 
 
 

@@ -24,7 +24,10 @@ app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
 app.use(express_1.default.json());
 app.set("trust proxy", 1);
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: env_1.envVars.FRONTEND_URL,
+    credentials: true
+}));
 app.use((0, cookie_parser_1.default)());
 app.use("/api/v1", routes_1.router);
 app.get("/", (req, res) => {
