@@ -64,6 +64,13 @@ const updateUser = async (userId: string, payload: Partial<IUser>, verifiedToken
 
 }
 
+const getMe = async (userId: string) => {
+    const user = await User.findById(userId).select("-password");
+    return {
+        data: user
+    }
+};
+
 const getSingleUser = async (userId: string) => {
     const users = await User.findById(userId);
 
@@ -131,6 +138,7 @@ export const UserServices = {
     createUser,
     updateUser,
     getAllUsers,
+    getMe,
     getSingleUser,
     blockedUser,
     unblockedUser

@@ -10,7 +10,7 @@ const router = Router();
 // All User can access
 router.post("/register", validateRequest(createUserZodSchema), UserController.createUser);
 router.patch("/:id", validateRequest(updateUserZodSchema), checkAuth(...Object.values(Role)), UserController.updateUser);
-
+router.get("/me", checkAuth(...Object.values(Role)), UserController.getMe);
 // Only ADMIN can access
 router.get("/all-users", checkAuth(Role.ADMIN), UserController.getAllUser);
 router.get("/:id", checkAuth(Role.ADMIN), UserController.getSingleUser)

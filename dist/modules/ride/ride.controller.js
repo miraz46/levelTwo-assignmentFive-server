@@ -20,7 +20,6 @@ const http_status_codes_1 = __importDefault(require("http-status-codes"));
 const sendResponse_1 = require("../../utils/sendResponse");
 const requestRides = (0, catchAsync_1.catchAsync)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const decodeToken = req.user;
-    console.log(req.body, decodeToken);
     const user = yield ride_service_1.RidesService.requestRides(req.body, decodeToken.userId);
     (0, sendResponse_1.sendResponse)(res, {
         statusCode: http_status_codes_1.default.CREATED,
